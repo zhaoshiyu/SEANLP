@@ -68,18 +68,21 @@ SEANLP: Southeast Asia Natural Language Processing
  * 词典逆向最段匹配分词
  * 句子相似度计算
 
+
+
 ## 说明
 1、泰语TCC和高棉语KCC切分使用`规则+正则表达式`实现，效率较低；泰语TCC切分可参考[Wittawat Jitkrittum的另一种实现](https://github.com/wittawatj/jtcc.git)。
 
 2、泰语单层条件随机场分词模型比层叠条件随机场分词模型大很多，需要很大的内存才能运行（`-Xmx>2G`）。
 
-3、缅甸语音节切分钟，音节词典中存在不同的编码和字库，不同的编码和字库书写顺序存在区别，所用缅甸语音节切分目前基本不能用。
+3、缅甸语音节切功能中，由于音节词典中存在不同的编码和字库，不同的编码和字库书写顺序存在区别，所用缅甸语音节切分目前基本不能用。
 
 4、缅甸语没有词性标注功能，所有缅甸语关键词抽取也存在问题。
 
 5、分词中层叠条件随机场效果最好，最短匹配分词效果最差。
 
-6、停用词不够全，只要包含了泰语和越南语的停用词。
+6、停用词不够全，主要包含了泰语和越南语的停用词。
+
 
 
 ## 下载
@@ -111,9 +114,9 @@ mvn clean package -Dmaven.test.skip=true
 
 ### Demo
 demo可以参考下列位置：
-[分词]()
-[句子相似度计算]()
-[关键词抽取和自动摘要]()
+[分词](SEANLP/src/test/java/cn/edu/kmust/seanlp/demo/SegmentDemo.java)
+[句子相似度计算](SEANLP/src/test/java/cn/edu/kmust/seanlp/demo/SimilarityDemo.java)
+[关键词抽取和自动摘要](SEANLP/src/test/java/cn/edu/kmust/seanlp/demo/ExtractDemo.java)
 
 #### 分词：
 ```
@@ -277,6 +280,8 @@ public class ExtractDemo {
 
 ### 鸣谢
 本项目参考和借鉴了开源项目[HanLP](https://github.com/hankcs/HanLP)。在此表示感谢！
+
+感谢昆明理工大学智能信息处理重点实验室各位老师的指导，感谢给我提供帮助的所有人，谢谢！
 
 作者 [@Zhao Shiyu](https://github.com/zhaoshiyu)
 
