@@ -279,7 +279,7 @@ public class ExtractDemo {
 - [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 ### 鸣谢
-本项目参考和借鉴了开源项目[HanLP](https://github.com/hankcs/HanLP)。在此表示感谢！
+本项目参考和借鉴了优秀开源项目[HanLP](https://github.com/hankcs/HanLP)。在此表示感谢！
 
 感谢昆明理工大学智能信息处理重点实验室各位老师的指导，感谢给我提供帮助的所有人，谢谢！
 
