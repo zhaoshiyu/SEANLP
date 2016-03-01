@@ -71,7 +71,7 @@ SEANLP: Southeast Asia Natural Language Processing
 
 
 ## 说明
-1、什么是TCC (Thai Character Cluster)，借用[Wittawat Jitkrittum的另一种TCC切分实现中的解释](https://github.com/wittawatj/jtcc.git)中的解释：proposed in Character Cluster Based Thai Information Retrieval is a group of inseparable Thai characters. This inseparability derives from Thai writing system which is independent of any context. As a result, TCC can be determined by a simple list of rules describing e.g., what characters need to follow/precede other characters.
+1、什么是TCC (Thai Character Cluster)，借用[Wittawat Jitkrittum的另一种TCC切分实现](https://github.com/wittawatj/jtcc.git)中的解释：proposed in Character Cluster Based Thai Information Retrieval is a group of inseparable Thai characters. This inseparability derives from Thai writing system which is independent of any context. As a result, TCC can be determined by a simple list of rules describing e.g., what characters need to follow/precede other characters.
 
 2、泰语TCC和高棉语KCC切分使用`规则+正则表达式`实现，效率较低；泰语TCC切分可参考[Wittawat Jitkrittum的另一种实现](https://github.com/wittawatj/jtcc.git)。
 
