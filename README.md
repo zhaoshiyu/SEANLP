@@ -86,12 +86,17 @@ SEANLP: Southeast Asia Natural Language Processing
 
 ### 方法一、直接下载源码编译
 
-可以自己接[下载本项目源码](https://github.com/ZhaoShiyu/SEANLP/archive/master.zip)。或者使用git clone 本项目：
+可以自己接[下载本项目源码](https://github.com/zhaoshiyu/SEANLP/archive/master.zip)进行打包
+```
+wget https://github.com/zhaoshiyu/SEANLP/archive/master.zip
+unzip master.zip
+cd SEANLP-master
+mvn clean package -Dmaven.test.skip=true
+```
+或者git clone本项目：
 ```
 git clone https://github.com/ZhaoShiyu/SEANLP.git
-```
-然后使用maven进行编译
-```
+cd SEANLP
 mvn clean package -Dmaven.test.skip=true
 ```
 注意：此处下载的源码中不包含泰语单层条件随机场分词模型，完整模型可下载[SEANLP-Java-1.0.0-Models.jar](http://pan.baidu.com/s/1jGY0MIa)
