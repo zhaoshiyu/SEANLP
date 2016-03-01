@@ -9,19 +9,19 @@ SEANLP: Southeast Asia Natural Language Processing
 **SEANLP**目前有以下功能：
 
 > * 泰语：
->> * TCC（Thai Character Cluster）切分     规则+正则表达式实现，效率较低；可参考[Wittawat Jitkrittum的另一种实现](https://github.com/wittawatj/jtcc.git)
->> * 音节切分
->> * 层叠条件随机场分词
->> * 单层条件随机场分词
->> * 词典极速分词
->> * 词典正向最长匹配分词
->> * 词典逆向最长匹配分词
->> * 词典正向最段匹配分词
->> * 词典逆向最段匹配分词
->> * 词性标注
->> * 句子相似度计算
->> * 关键词抽取
->> * 自动摘要
+>  * TCC（Thai Character Cluster）切分     规则+正则表达式实现，效率较低；可参考[Wittawat Jitkrittum的另一种实现](https://github.com/wittawatj/jtcc.git)
+>  * 音节切分
+>  * 层叠条件随机场分词
+>  * 单层条件随机场分词
+>  * 词典极速分词
+>  * 词典正向最长匹配分词
+>  * 词典逆向最长匹配分词
+>  * 词典正向最段匹配分词
+>  * 词典逆向最段匹配分词
+>  * 词性标注
+>  * 句子相似度计算
+>  * 关键词抽取
+>  * 自动摘要
 
 >*越南语：
 >>*条件随机场分词
