@@ -71,19 +71,19 @@ SEANLP: Southeast Asia Natural Language Processing
 
 
 ## 说明
-1、什么是TCC (Thai Character Cluster)，借用[Wittawat Jitkrittum的另一种TCC切分实现](https://github.com/wittawatj/jtcc.git)中的解释：proposed in Character Cluster Based Thai Information Retrieval is a group of inseparable Thai characters. This inseparability derives from Thai writing system which is independent of any context. As a result, TCC can be determined by a simple list of rules describing e.g., what characters need to follow/precede other characters.
+1. 什么是TCC (Thai Character Cluster)，借用[Wittawat 		  Jitkrittum的另一种TCC切分实现](https://github.com/wittawatj/jtcc.git)中的解释：proposed in Character Cluster Based Thai   Information Retrieval is a group of inseparable Thai characters. This inseparability derives from Thai writing system which is independent of any context. As a result, TCC can be determined by a simple list of rules describing e.g., what characters need to follow/precede other characters.
 
-2、泰语TCC和高棉语KCC切分使用`规则+正则表达式`实现，效率较低；泰语TCC切分可参考[Wittawat Jitkrittum的另一种实现](https://github.com/wittawatj/jtcc.git)。
+2. 泰语TCC和高棉语KCC切分使用`规则+正则表达式`实现，效率较低；泰语TCC切分可参考[Wittawat Jitkrittum的另一种实现](https://github.com/wittawatj/jtcc.git)。
 
-3、泰语单层条件随机场分词模型比层叠条件随机场分词模型大很多，需要很大的内存才能运行（`-Xmx>2G`）。
+3. 泰语单层条件随机场分词模型比层叠条件随机场分词模型大很多，需要很大的内存才能运行（`-Xmx>2G`）。
 
-4、缅甸语音节切功能中，由于音节词典中存在不同的编码和字库，不同的编码和字库书写顺序存在区别，所用缅甸语音节切分目前基本不能用。
+4. 缅甸语音节切功能中，由于音节词典中存在不同的编码和字库，不同的编码和字库书写顺序存在区别，所用缅甸语音节切分目前基本不能用。
 
-5、缅甸语没有词性标注功能，所有缅甸语关键词抽取也存在问题。
+5. 缅甸语没有词性标注功能，所有缅甸语关键词抽取也存在问题。
 
-6、分词中层叠条件随机场效果最好，最短匹配分词效果最差。
+6. 分词中层叠条件随机场效果最好，最短匹配分词效果最差。
 
-7、停用词不够全，主要包含了泰语和越南语的停用词。
+7. 停用词不够全，主要包含了泰语和越南语的停用词。
 
 
 
