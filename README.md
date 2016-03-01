@@ -9,7 +9,7 @@ SEANLP: Southeast Asia Natural Language Processing
 **SEANLP**目前有以下功能：
 
 * 泰语：
-  * TCC（Thai Character Cluster）切分     规则+正则表达式实现，效率较低；可参考[Wittawat Jitkrittum的另一种实现](https://github.com/wittawatj/jtcc.git)
+  * TCC（Thai Character Cluster）切分
   * 音节切分
   * 层叠条件随机场分词
   * 单层条件随机场分词
