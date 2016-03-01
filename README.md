@@ -8,7 +8,7 @@ SEANLP: Southeast Asia Natural Language Processing
 
 **SEANLP**目前有以下功能：
 
-> * 泰语：
+* 泰语：
   * TCC（Thai Character Cluster）切分     规则+正则表达式实现，效率较低；可参考[Wittawat Jitkrittum的另一种实现](https://github.com/wittawatj/jtcc.git)
   * 音节切分
   * 层叠条件随机场分词
@@ -23,7 +23,7 @@ SEANLP: Southeast Asia Natural Language Processing
   * 关键词抽取
   * 自动摘要
 
-> * 越南语：
+* 越南语：
  * 条件随机场分词
  * 词典极速分词
  * 词典正向最长匹配分词
@@ -35,7 +35,7 @@ SEANLP: Southeast Asia Natural Language Processing
  * 关键词抽取
  * 自动摘要
 
-> * 柬埔寨语（高棉语）：
+* 柬埔寨语（高棉语）：
  * KCC切分
  * 条件随机场分词
  * 词典极速分词
@@ -48,7 +48,7 @@ SEANLP: Southeast Asia Natural Language Processing
  * 关键词抽取
  * 自动摘要
 
-> * 老挝语：
+* 老挝语：
  * 词典极速分词
  * 词典正向最长匹配分词
  * 词典逆向最长匹配分词
@@ -59,7 +59,7 @@ SEANLP: Southeast Asia Natural Language Processing
  * 关键词抽取
  * 自动摘要
 
-> * 缅甸语：
+* 缅甸语：
  * 音节切分
  * 词典极速分词
  * 词典正向最长匹配分词
