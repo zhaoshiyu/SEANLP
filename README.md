@@ -113,10 +113,10 @@ mvn clean package -Dmaven.test.skip=true
 单层条件随机场泰语分词模型很大，需要`-Xmx>2G`
 
 ### Demo
-demo可以参考下列位置：
-[分词](SEANLP/src/test/java/cn/edu/kmust/seanlp/demo/SegmentDemo.java)<br>
-[句子相似度计算](SEANLP/src/test/java/cn/edu/kmust/seanlp/demo/SimilarityDemo.java)<br>
-[关键词抽取和自动摘要](SEANLP/src/test/java/cn/edu/kmust/seanlp/demo/ExtractDemo.java)<br>
+demo可以参考下列位置：<br>
+	1、[分词](SEANLP/src/test/java/cn/edu/kmust/seanlp/demo/SegmentDemo.java)<br>
+	2、[句子相似度计算](SEANLP/src/test/java/cn/edu/kmust/seanlp/demo/SimilarityDemo.java)<br>
+	3、[关键词抽取和自动摘要](SEANLP/src/test/java/cn/edu/kmust/seanlp/demo/ExtractDemo.java)<br>
 
 #### 分词：
 ```
