@@ -1,17 +1,19 @@
 package cn.edu.kmust.seanlp.collection.trie;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author  Zhao Shiyu
  *
  */
-public interface ITrie {
+public interface ITrie extends Serializable {
 	
 	/**
      * 词典中的词的最大长度，即有多少个字符
      * @return 长度
      */
-    public int getMaxLength();
+    int getMaxLength();
     
     /**
      * 判断指定的文本是不是一个词
@@ -20,7 +22,7 @@ public interface ITrie {
      * @param count 指定的文本的长度
      * @return 
      */
-    public boolean contains(char[] text, int offset, int count);
+    boolean contains(char[] text, int offset, int count);
 
     /**
      * 判断指定的文本是不是一个词
@@ -29,18 +31,18 @@ public interface ITrie {
      * @param count 指定的文本的长度
      * @return 
      */
-    public boolean contains(String text, int offset, int count);
+    boolean contains(String text, int offset, int count);
 
     /**
      * 判断文本是不是一个词
      * @param key 词
      * @return 是否
      */
-    public boolean contains(String key);
+    boolean contains(String key);
 
     /**
      * 清空词典中的所有的词
      */
-    public void clear();
+    void clear();
 
 }
