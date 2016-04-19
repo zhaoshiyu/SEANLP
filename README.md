@@ -116,11 +116,11 @@ mvn clean package -Dmaven.test.skip=true
 
 ### Demo
 demo可以参考下列位置：<br>
-	1. [分词](https://github.com/zhaoshiyu/SEANLP/blob/master/src/test/java/cn/edu/kmust/seanlp/demo/SegmentDemo.java)<br>
+	1. [分词和词性标注](https://github.com/zhaoshiyu/SEANLP/blob/master/src/test/java/cn/edu/kmust/seanlp/demo/SegmentDemo.java)<br>
 	2. [句子相似度计算](https://github.com/zhaoshiyu/SEANLP/blob/master/src/test/java/cn/edu/kmust/seanlp/demo/SimilarityDemo.java)<br>
 	3. [关键词抽取和自动摘要](https://github.com/zhaoshiyu/SEANLP/blob/master/src/test/java/cn/edu/kmust/seanlp/demo/ExtractDemo.java)<br>
 
-#### 1、分词：
+#### 1、分词和词性标注：
 ```
 package cn.edu.kmust.seanlp.demo;
 
