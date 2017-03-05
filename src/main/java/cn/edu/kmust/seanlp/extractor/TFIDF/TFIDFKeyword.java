@@ -100,8 +100,8 @@ public class TFIDFKeyword  extends KeywordExtractor {
 	
 	/**
      * 
-    * @Title: tf
-    * @Description: 分词结果转化为tf,公式为:tf(w,d) = count(w, d) / size(d)
+    * @Title: TF
+    * @Description: 分词结果转化为TF,公式为:TF(w,d) = count(w, d) / size(d)
     * 即词w在文档d中出现次数count(w, d)和文档d中总词数size(d)的比值
     * @param @param segWordsResult
     * @param @return    
