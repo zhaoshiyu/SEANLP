@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /**
- * HMM，目前未使用到HMM
+ * HMM，目前未使用到该HMM
  * 
  * @author Zhao Shiyu
  *

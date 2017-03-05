@@ -142,9 +142,9 @@ public static List<String> dict2sentence(List<String> lines) {
 			}
 		}
 		List<String> naturelist = new ArrayList<String>();
-		for (String key : nmap.keySet()) {
-			naturelist.add(key);
-			System.out.println("nature = " + key + "; number = " + nmap.get(key));
+		for (Map.Entry<String, Integer> entry : nmap.entrySet()) {
+			naturelist.add(entry.getKey());
+			System.out.println("nature = " + entry.getKey() + "; number = " + entry.getValue());
 		}
 		Collections.sort(naturelist);
 		return naturelist;
@@ -219,8 +219,8 @@ public static List<String> dict2sentence(List<String> lines) {
 	
 	public static List<String> mapToList(Map<String, String> map) {
 		List<String> rets = new ArrayList<String>();
-		for (String key : map.keySet()) {
-			rets.add(key + "\t" + map.get(key));
+		for (Map.Entry<String, String> entry : map.entrySet()) {
+			rets.add(entry.getKey() + "\t" + entry.getValue());
 		}
 		return rets;
 	}
@@ -423,8 +423,8 @@ public static List<String> dict2sentence(List<String> lines) {
 		}
 		System.out.println(treemap.size());
 		List<String> rets = new ArrayList<String>();
-		for (String key : treemap.keySet()) {
-			String ret = key + "\t" + String.valueOf(treemap.get(key));
+		for (Map.Entry<String, Integer> entry : treemap.entrySet()) {
+			String ret = entry.getKey() + "\t" + String.valueOf(entry.getValue());
 			rets.add(ret);
 			System.out.println(ret);
 		}

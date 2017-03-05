@@ -146,14 +146,14 @@ public class Lexitron {
 //		
 		
 		int cc = 0;
-		for (String key : ne.keySet()) {
-			System.out.println("key = " + key + "; value = " + ne.get(key));
-			cc += ne.get(key);
+		for (Map.Entry<String, Integer> entry : ne.entrySet()) {
+			System.out.println("key = " + entry.getKey() + "; value = " + entry.getValue());
+			cc += entry.getValue();
 		}
 		System.err.println("count = " + count + "cc = " + cc);
 		
-		for (String key : diff.keySet()) {
-			System.out.println("key = " + key + "; value = " + diff.get(key));
+		for (Map.Entry<String, String> entry : diff.entrySet()) {
+			System.out.println("key = " + entry.getKey() + "; value = " + entry.getValue());
 		}
 		System.out.println("map = " + map.size() +"; treemap = " + treemap.size() + "; diff = " + diff.size());
 		return treemap;
@@ -161,9 +161,9 @@ public class Lexitron {
 	
 	public static List<String> mapToList(Map<String, String> map) {
 		List<String> rets = new ArrayList<String>();
-		for (String key : map.keySet()) {
-			System.err.println("key = " + key + "; value = " + map.get(key));
-			rets.add(key + "\t" + map.get(key));
+		for (Map.Entry<String, String> entry : map.entrySet()) {
+			System.err.println("key = " + entry.getKey() + "; value = " + entry.getValue());
+			rets.add(entry.getKey() + "\t" + entry.getValue());
 		}
 		//IOUtil.writeLines("data/corpus/lexitron-data/thai-dictionary.txt", rets);
 		return rets;
@@ -266,14 +266,14 @@ public class Lexitron {
 		}
 
 		int cc = 0;
-		for (String key : ne.keySet()) {
-			System.out.println("key = " + key + "; value = " + ne.get(key));
-			cc += ne.get(key);
+		for (Map.Entry<String, Integer> entry : ne.entrySet()) {
+			System.out.println("key = " + entry.getKey() + "; value = " + entry.getValue());
+			cc += entry.getValue();
 		}
 		System.err.println("count = " + count + "cc = " + cc);
 		
-		for (String key : diff.keySet()) {
-			System.out.println("key = " + key + "; value = " + diff.get(key));
+		for (Map.Entry<String, String> entry : diff.entrySet()) {
+			System.out.println("key = " + entry.getKey() + "; value = " + entry.getValue());
 		}
 		System.out.println("map = " + map.size() +"; treemap = " + treemap.size() + "; diff = " + diff.size());
 		return treemap;
@@ -288,8 +288,8 @@ public class Lexitron {
 		IOUtil.appendLines("data/corpus/lexitron-data/thai-dictionary-telex.txt", mapToList(tMap));
 //		IOUtil.writeLines("data/corpus/lexitron-data/thai-dictionary-etlex.txt", mapToList(eMap));
 		Map<String, String> treemap = new TreeMap<String, String>();
-		for (String key : tMap.keySet()) {
-			String n = tMap.get(key);
+		for (Map.Entry<String, String> entry : treemap.entrySet()) {
+			String n = entry.getValue();
 			String[] nnn = n.split("\t");
 			for (String nn : nnn) {
 				treemap.put(nn, "1");

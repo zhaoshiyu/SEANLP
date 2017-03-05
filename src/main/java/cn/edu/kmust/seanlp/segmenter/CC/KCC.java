@@ -10,7 +10,7 @@ import cn.edu.kmust.seanlp.segmenter.domain.Term;
 /**
  * KCC切分
  * 
- * @author zsy
+ * @author Zhao Shiyu
  *
  */
 public class KCC extends AbstractCC {

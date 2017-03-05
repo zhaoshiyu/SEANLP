@@ -136,9 +136,9 @@ public class Orchid97 {
 			}
 		}
 		List<String> naturelist = new ArrayList<String>();
-		for (String key : nmap.keySet()) {
-			naturelist.add(key);
-			System.out.println("nature = " + key + "; number = " + nmap.get(key));
+		for (Map.Entry<String, Integer> entry : nmap.entrySet()) {
+			naturelist.add(entry.getKey());
+			System.out.println("nature = " + entry.getKey() + "; number = " + entry.getValue());
 		}
 		Collections.sort(naturelist);
 		return naturelist;
@@ -207,8 +207,8 @@ public class Orchid97 {
 	
 	public static List<String> mapToList(Map<String, String> map) {
 		List<String> rets = new ArrayList<String>();
-		for (String key : map.keySet()) {
-			rets.add(key + "\t" + map.get(key));
+		for (Map.Entry<String, String> entry : map.entrySet()) {
+			rets.add(entry.getKey() + "\t" + entry.getValue());
 		}
 		return rets;
 	}

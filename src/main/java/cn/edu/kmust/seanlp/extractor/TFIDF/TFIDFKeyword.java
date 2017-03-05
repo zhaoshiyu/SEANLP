@@ -115,12 +115,10 @@ public class TFIDFKeyword  extends KeywordExtractor {
     		return tf;
     	}
         Float size=Float.valueOf(WordsCount.size());
-        Set<String> keys=WordsCount.keySet();
-        for(String key: keys){
-        	Integer value=WordsCount.get(key);
-        	tf.put(key, Float.valueOf(value)/size);
+        for(Map.Entry<String, Integer> entry : WordsCount.entrySet()){
+        	tf.put(entry.getKey(), Float.valueOf(entry.getValue())/size);
         }
-        return tf;  
+        return tf;
     } 
     
     /**

@@ -12,8 +12,8 @@ public class Corpus {
 	 * @return
 	 */
 	public static Map<String, String> NatureSort(Map<String, String> wnmap) {
-		for (String key : wnmap.keySet()) {
-			String n = wnmap.get(key);
+		for (Map.Entry<String, String>  entry : wnmap.entrySet()) {
+			String n = entry.getValue();
 			String[] value = n.split("\t");
 			int len = value.length;
 			if (len > 2) {
@@ -42,7 +42,7 @@ public class Corpus {
 					}
 				}
 				System.out.println(newNature);
-				wnmap.put(key, newNature);
+				wnmap.put(entry.getKey(), newNature);
 			}
 			
 		}
@@ -51,8 +51,8 @@ public class Corpus {
 	
 	public static List<String> mapToList(Map<String, String> map) {
 		List<String> rets = new ArrayList<String>();
-		for (String key : map.keySet()) {
-			rets.add(key + "\t" + map.get(key));
+		for (Map.Entry<String, String> entry : map.entrySet()) {
+			rets.add(entry.getKey() + "\t" + entry.getValue());
 		}
 		return rets;
 	}
