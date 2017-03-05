@@ -98,11 +98,11 @@ public class TFIDF {
      */
     private static HashMap<String, Double> tf(Map<String, Integer> segWordsResult) { 
  
-        HashMap<String, Double> tf  =  new HashMap<String, Double>();// 正规化  
+        HashMap<String, Double> tf  =  new HashMap<String, Double>();
         if(segWordsResult   ==   null || segWordsResult.size()   ==   0){
     		return tf;
     	}
-        Double size  =  Double.valueOf(segWordsResult.size());
+        double size  =  (double)segWordsResult.size();
         for(Entry<String, Integer> entry : segWordsResult.entrySet()){
         	tf.put(entry.getKey(), (double)entry.getValue()/size);
         }
@@ -152,7 +152,7 @@ public class TFIDF {
     		if(fileSegs   ==   null || fileSegs.size()   ==  0){
     			continue;
     		}
-    		//统计每个分词的idf
+    		//统计每个分词的IDF
     		Set<String> segs = fileSegs.keySet();
     		for(String seg : segs){
     			if (containWordOfAllDocNumberMap.containsKey(seg)) {
@@ -167,7 +167,7 @@ public class TFIDF {
     }
  
     /**
-     * idf  =  log(n / docs(w, D)) 
+     * IDF  =  log(n / docs(w, D)) 
      * @param allSegsMap
      * @return
      */
@@ -188,7 +188,7 @@ public class TFIDF {
     /**
      * TF-IDF
      * @param allTfMap
-     * @param idf
+     * @param IDF
      * @return
      */
     public static Map<String, Map<String, Double>> tfIdf(Map<String, Map<String, Double>> allTfMap,Map<String, Double> idf){
@@ -261,7 +261,7 @@ public class TFIDF {
            }
        });
        for(Map.Entry<String,Double> mapping:tfidfList){ 
-           System.out.println("fileName:"+filePath + mapping.getKey()+":"+mapping.getValue()); 
+           System.out.println("fileName: "+filePath + mapping.getKey()+" : "+mapping.getValue()); 
       } 
  	}
 }
