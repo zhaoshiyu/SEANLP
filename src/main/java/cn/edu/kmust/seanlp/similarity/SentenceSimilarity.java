@@ -9,16 +9,14 @@ import cn.edu.kmust.math.Statistics;
 import cn.edu.kmust.seanlp.segmenter.domain.Term;
 
 /**
- * 句子相似度计算
+ * sentence similarity
  * 
  * @author Zhao Shiyu
  *
  */
 public class SentenceSimilarity extends AbstractSimilarity {
 
-	/**
-	 * 阈值
-	 */
+	
 	public final static double threshold = 0.2;
 	
 	/**
@@ -61,7 +59,8 @@ public class SentenceSimilarity extends AbstractSimilarity {
 			}
 			// 取出句子的语义分数
 			Iterator<String> it = union.keySet().iterator();
-			int size = size1 > size2 ? size1 : size2;
+			//int size = size1 > size2 ? size1 : size2;
+			int size = union.size();
 			double[] s1 = new double[size];
 			double[] s2 = new double[size];
 			int count = 0;
@@ -74,7 +73,7 @@ public class SentenceSimilarity extends AbstractSimilarity {
 			// 计算余弦相似度
 			return Statistics.includedAngleCosine(s1, s2);
 		} else {
-			throw new Exception("传参有问题！");
+			throw new Exception("parameter error");
 		}
 	}
 	
