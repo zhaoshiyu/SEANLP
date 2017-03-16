@@ -50,7 +50,7 @@ public class Corpus {
 	}
 	
 	public static List<String> mapToList(Map<String, String> map) {
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new ArrayList<String>(map.size());
 		for (Map.Entry<String, String> entry : map.entrySet()) {
 			rets.add(entry.getKey() + "\t" + entry.getValue());
 		}

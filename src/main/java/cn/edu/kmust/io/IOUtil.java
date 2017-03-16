@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.RandomAccessFile;
 import java.io.Reader;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -686,7 +686,7 @@ public class IOUtil {
 	public static List readFileByChar(String fileName) {
 		File file = new File(fileName);
 		Reader reader = null;
-		List charList = new ArrayList();
+		List charList = new LinkedList();
 		try {
 			System.out.println("以字符为单位读取文件内容，一次读一个字节：");
 			// 一次读一个字符
@@ -739,7 +739,7 @@ public class IOUtil {
 	 * @return List<String>
 	 */
 	public static List<String> readLines(File file) {
-		List<String> fileContent = new ArrayList<String>();
+		List<String> fileContent = new LinkedList<String>();
 		try {
 			if (file.isFile() && file.exists()) {
 				InputStreamReader read = new InputStreamReader(new FileInputStream(file), "utf-8");
@@ -774,7 +774,7 @@ public class IOUtil {
 	 * @return
 	 */
 	public static List<String> readLines(InputStream is) {
-		List<String> fileContent = new ArrayList<String>();
+		List<String> fileContent = new LinkedList<String>();
 		try {
 			InputStreamReader read = new InputStreamReader(is, "utf-8");
 			BufferedReader reader = new BufferedReader(read);
@@ -797,7 +797,7 @@ public class IOUtil {
 	 * @return List<String>
 	 */
 	public static List<String> readLines(File file, String encoding) {
-		List<String> lines = new ArrayList<String>();
+		List<String> lines = new LinkedList<String>();
 		try {
 			if (file.isFile() && file.exists()) {
 				InputStreamReader read = new InputStreamReader(new FileInputStream(file), encoding);
@@ -832,7 +832,7 @@ public class IOUtil {
 	 * @return List<String>
 	 */
 	public static List<String> readThaiLines(File file) {
-		List<String> lines = new ArrayList<String>();
+		List<String> lines = new LinkedList<String>();
 		try {
 			if (file.isFile() && file.exists()) {
 				InputStreamReader read = new InputStreamReader(new FileInputStream(file), "ISO-8859-11");

@@ -2,11 +2,10 @@ package cn.edu.kmust.seanlp.corpus.Thai;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-
-import javax.sound.midi.Synthesizer;
 
 import cn.edu.kmust.io.IOUtil;
 import cn.edu.kmust.seanlp.corpus.util.Corpus;
@@ -25,7 +24,7 @@ public class Orchid97 {
 	 * @return
 	 */
 	public static List<String> getSentence(String path) {
-		List<String> sentences = new ArrayList<String>();
+		List<String> sentences = new LinkedList<String>();
 		List<String> lines = IOUtil.readLines(path);
 		int sIdxs = 0;
 		boolean sentenceFlag = false;
@@ -135,7 +134,7 @@ public class Orchid97 {
 				}
 			}
 		}
-		List<String> naturelist = new ArrayList<String>();
+		List<String> naturelist = new ArrayList<String>(nmap.size());
 		for (Map.Entry<String, Integer> entry : nmap.entrySet()) {
 			naturelist.add(entry.getKey());
 			System.out.println("nature = " + entry.getKey() + "; number = " + entry.getValue());
@@ -184,7 +183,7 @@ public class Orchid97 {
 	
 	public static List<String> makeTransitionTable(List<String> naturelist, int[][] transitionMatrix) {
 		Collections.sort(naturelist);
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new LinkedList<String>();
 		String line = "";
 		int len = naturelist.size();
 		// 表头
@@ -206,7 +205,7 @@ public class Orchid97 {
 	}
 	
 	public static List<String> mapToList(Map<String, String> map) {
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new ArrayList<String>(map.size());
 		for (Map.Entry<String, String> entry : map.entrySet()) {
 			rets.add(entry.getKey() + "\t" + entry.getValue());
 		}
@@ -334,7 +333,7 @@ public class Orchid97 {
 ////		}
 //		
 //		//词性转移矩阵
-//		List<String> naturelist = new ArrayList<String>();
+//		List<String> naturelist = new ArrayList<String>(nmap.size());
 //		for (String key : nmap.keySet()) {
 //			naturelist.add(key);
 //			System.out.println(key);

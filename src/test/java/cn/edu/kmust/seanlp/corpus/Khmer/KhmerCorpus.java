@@ -2,6 +2,7 @@ package cn.edu.kmust.seanlp.corpus.Khmer;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -29,7 +30,7 @@ public class KhmerCorpus {
 	}
 	
 public static List<String> dict2sentence(List<String> lines) {
-	List<String> sentences = new ArrayList<String>();
+	List<String> sentences = new LinkedList<String>();
 	String sentence = "";
 	int count = 0;
 	for (String line : lines) {
@@ -141,7 +142,7 @@ public static List<String> dict2sentence(List<String> lines) {
 				}
 			}
 		}
-		List<String> naturelist = new ArrayList<String>();
+		List<String> naturelist = new ArrayList<String>(nmap.size());
 		for (Map.Entry<String, Integer> entry : nmap.entrySet()) {
 			naturelist.add(entry.getKey());
 			System.out.println("nature = " + entry.getKey() + "; number = " + entry.getValue());
@@ -196,7 +197,7 @@ public static List<String> dict2sentence(List<String> lines) {
 	
 	public static List<String> makeTransitionTable(List<String> naturelist, int[][] transitionMatrix) {
 		Collections.sort(naturelist);
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new LinkedList<String>();
 		String line = "";
 		int len = naturelist.size();
 		// 表头
@@ -218,7 +219,7 @@ public static List<String> dict2sentence(List<String> lines) {
 	}
 	
 	public static List<String> mapToList(Map<String, String> map) {
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new ArrayList<String>(map.size());
 		for (Map.Entry<String, String> entry : map.entrySet()) {
 			rets.add(entry.getKey() + "\t" + entry.getValue());
 		}
@@ -226,7 +227,7 @@ public static List<String> dict2sentence(List<String> lines) {
 	}
 	
 	public static void makeCRFData(List<String> sentences) {
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new LinkedList<String>();
 		for (String sentence : sentences) {
 			sentence = sentence.trim();
 			String[] wordNatures = sentence.split(" ");
@@ -361,7 +362,7 @@ public static List<String> dict2sentence(List<String> lines) {
 		//data/corpus/Khmer/seafreq.txt
 		List<String> lines = IOUtil.readLines("data/corpus/Khmer/KCorpus.txt");
 		Map<String, String> treemap = new TreeMap<String, String>();
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new ArrayList<String>(lines.size());
 		for (String line : lines) {
 			line = line.trim();
 			rets.add(line + "\t" + "1");
@@ -422,7 +423,7 @@ public static List<String> dict2sentence(List<String> lines) {
 			}
 		}
 		System.out.println(treemap.size());
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new ArrayList<String>(treemap.size());
 		for (Map.Entry<String, Integer> entry : treemap.entrySet()) {
 			String ret = entry.getKey() + "\t" + String.valueOf(entry.getValue());
 			rets.add(ret);

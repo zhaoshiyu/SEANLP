@@ -1,7 +1,7 @@
 package cn.edu.kmust.seanlp.corpus.orchid97;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 import cn.edu.kmust.io.IOUtil;
@@ -26,9 +26,9 @@ public class ThaiPrefixesAndSuffixesCounter {
 		IOUtil io = new IOUtil();
 		List<String> preAndSufsTemp = io.readLines(preAndSufFile, encoding);
 		List<String> lines = io.readLines(orchid97Corpus, encoding);
-		List<String> preAndSufs = new ArrayList<String>();
-		List<String> includePFWords = new ArrayList<String>();
-		List<String> pfs = new ArrayList<String>();
+		List<String> preAndSufs = new LinkedList<String>();
+		List<String> includePFWords = new LinkedList<String>();
+		List<String> pfs = new LinkedList<String>();
 		for (String p:preAndSufsTemp) {
 			if (!preAndSufs.contains(p)) {
 				preAndSufs.add(p);
@@ -65,7 +65,7 @@ public class ThaiPrefixesAndSuffixesCounter {
 			}
 		}
 		System.out.println("总词数：" + wordTotal + "共：" + wordIncludePFSCounter + "个词包含词根词缀。");
-		List<String> includePFWordsTemp = new ArrayList<String>();
+		List<String> includePFWordsTemp = new LinkedList<String>();
 		for (String word:includePFWords) {
 			if (!includePFWordsTemp.contains(word)) {
 				includePFWordsTemp.add(word);

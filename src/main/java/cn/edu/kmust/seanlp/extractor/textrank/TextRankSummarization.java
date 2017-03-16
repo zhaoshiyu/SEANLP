@@ -131,7 +131,7 @@ public class TextRankSummarization extends AbstractTextRank {
 	 * @return
 	 */
 	static List<String> spiltSentence(String document) {
-		List<String> sentences = new ArrayList<String>();
+		List<String> sentences = new LinkedList<String>();
 		for (String line : document.split("[။\r\n]")) {
 			line = line.trim();
 			if (line.length() == 0)

@@ -160,7 +160,7 @@ public class Lexitron {
 	}
 	
 	public static List<String> mapToList(Map<String, String> map) {
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new ArrayList<String>(map.size());
 		for (Map.Entry<String, String> entry : map.entrySet()) {
 			System.err.println("key = " + entry.getKey() + "; value = " + entry.getValue());
 			rets.add(entry.getKey() + "\t" + entry.getValue());

@@ -2,6 +2,7 @@ package cn.edu.kmust.seanlp.corpus.Lao;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -100,7 +101,7 @@ public class LaoCorpus {
 				}
 			}
 		}
-		List<String> naturelist = new ArrayList<String>();
+		List<String> naturelist = new ArrayList<String>(nmap.size());
 		for (Map.Entry<String, Integer> entry : nmap.entrySet()) {
 			naturelist.add(entry.getKey());
 			System.out.println("nature = " + entry.getKey() + "; number = " + entry.getValue());
@@ -155,7 +156,7 @@ public class LaoCorpus {
 	
 	public static List<String> makeTransitionTable(List<String> naturelist, int[][] transitionMatrix) {
 		Collections.sort(naturelist);
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new LinkedList<String>();
 		String line = "";
 		int len = naturelist.size();
 		// 表头
@@ -177,7 +178,7 @@ public class LaoCorpus {
 	}
 	
 	public static List<String> mapToList(Map<String, String> map) {
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new ArrayList<String>(map.size());
 		for (Map.Entry<String, String> entry : map.entrySet()) {
 			rets.add(entry.getKey() + "\t" + entry.getValue());
 		}

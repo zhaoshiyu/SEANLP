@@ -1,6 +1,7 @@
 package cn.edu.kmust.seanlp.segmenter.matcher;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import cn.edu.kmust.seanlp.collection.trie.DATrie;
@@ -22,7 +23,7 @@ public class ReverseMinimumMatcher  extends AbstractMatcher {
 
 	@Override
 	public List<Term> segment(String[] strs) {
-		List<Term> result = new ArrayList<Term>();
+		List<Term> result = new LinkedList<Term>();
         //文本长度
         final int textLen=strs.length;
         //从未分词的文本中截取的长度
@@ -59,7 +60,7 @@ public class ReverseMinimumMatcher  extends AbstractMatcher {
 
 //	@Override
 //	public List<Term> segment(String sentence) {
-//		List<Term> result = new ArrayList<Term>();
+//		List<Term> result = new LinkedList<Term>();
 //        //文本长度
 //        final int textLen=sentence.length();
 //        //从未分词的文本中截取的长度
@@ -96,7 +97,7 @@ public class ReverseMinimumMatcher  extends AbstractMatcher {
 	
 	@Override
 	public List<Term> segment(char[] sentence) {
-		List<Term> result = new ArrayList<Term>();
+		List<Term> result = new LinkedList<Term>();
         //文本长度
         final int textLen=sentence.length;
         //从未分词的文本中截取的长度

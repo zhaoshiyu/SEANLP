@@ -1,7 +1,7 @@
 package cn.edu.kmust.seanlp.corpus.orchid97;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 import cn.edu.kmust.io.IOUtil;
@@ -38,10 +38,10 @@ public class Orchid97 {
 		String encoding = "UTF-8";
 		int k = 0;
 		int p =0;
-		List<String> syllables = new ArrayList<String>(); 
-		List<String> syllablesNoT = new ArrayList<String>(); 
-		List<String> words = new ArrayList<String>(); 
-		List<String> wordsTemp = new ArrayList<String>(); 
+		List<String> syllables = new LinkedList<String>(); 
+		List<String> syllablesNoT = new LinkedList<String>(); 
+		List<String> words = new LinkedList<String>(); 
+		List<String> wordsTemp = new LinkedList<String>(); 
 		List<String> lines = IOUtil.readLines(orchid97Path, encoding);
 		for (String line:lines) {
 			if (!line.equals("NULL") && !line.equals("<space>.*") && !line.matches(".*//")) {

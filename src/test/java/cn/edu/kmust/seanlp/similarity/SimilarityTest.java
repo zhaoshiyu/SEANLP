@@ -17,7 +17,7 @@ public class SimilarityTest extends TestCase {
 	
 	public void testKmSimilarity() {
 		String sent = "កម្មវិធី ​អប់រំ​បច្ចេកទេស​ដែល​កំពុង​អនុវត្ត​នាពេលបច្ចុប្បន្ន";
-		System.out.println(SEANLP.Khmer.sentenceSimilarity(sent, sent));
+		System.out.println(SEANLP.Khmer.sentenceSimilarity(sent, ""));
 	}
 	
 	public void testLoSimilarity() {

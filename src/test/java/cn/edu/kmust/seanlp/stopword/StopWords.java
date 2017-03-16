@@ -26,7 +26,7 @@ public class StopWords {
 			map.put(line, "");
 		}
 		
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new ArrayList<String>(map.size());
 		for (String key : map.keySet()) {
 			rets.add(key);
 //			System.out.println(key);

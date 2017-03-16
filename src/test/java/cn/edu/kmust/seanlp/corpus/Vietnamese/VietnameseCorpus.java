@@ -2,6 +2,7 @@ package cn.edu.kmust.seanlp.corpus.Vietnamese;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -101,7 +102,7 @@ public class VietnameseCorpus {
 				}
 			}
 		}
-		List<String> naturelist = new ArrayList<String>();
+		List<String> naturelist = new ArrayList<String>(nmap.size());
 		for (Map.Entry<String, Integer> entry : nmap.entrySet()) {
 			naturelist.add(entry.getKey());
 			System.out.println("nature = " + entry.getKey() + "; number = " + entry.getValue());
@@ -156,9 +157,9 @@ public class VietnameseCorpus {
 	
 	public static List<String> makeTransitionTable(List<String> naturelist, int[][] transitionMatrix) {
 		Collections.sort(naturelist);
-		List<String> rets = new ArrayList<String>();
-		String line = "";
 		int len = naturelist.size();
+		List<String> rets = new ArrayList<String>(len);
+		String line = "";
 		// 表头
 		for (int i = 0; i < len; i++) {
 			line += "\t" + naturelist.get(i);
@@ -178,7 +179,7 @@ public class VietnameseCorpus {
 	}
 	
 	public static List<String> mapToList(Map<String, String> map) {
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new ArrayList<String>(map.size());
 		for (Map.Entry<String, String> entry : map.entrySet()) {
 			rets.add(entry.getKey() + "\t" + entry.getValue());
 		}
@@ -187,7 +188,7 @@ public class VietnameseCorpus {
 	
 	public static void makeCRFData() {
 		String file = "data/corpus/Vietnamese/vi-pos-corpus.txt";
-		List<String> rets = new ArrayList<String>();
+		List<String> rets = new LinkedList<String>();
 		List<String> sentences = IOUtil.readLines(file);
 		for (String sentence : sentences) {
 			sentence = sentence.trim();
