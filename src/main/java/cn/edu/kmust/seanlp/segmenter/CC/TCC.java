@@ -220,7 +220,7 @@ public class TCC extends AbstractCC {
 		Pattern p = Pattern.compile(tcc);
 		Matcher m = p.matcher(sentence);
 		
-		List<Term> result = new ArrayList<Term>();
+		List<Term> result = new LinkedList<Term>();
 		while (m.find()) {//如果匹配到结果
 			result.add(new Term(m.group(), null));
 		}
