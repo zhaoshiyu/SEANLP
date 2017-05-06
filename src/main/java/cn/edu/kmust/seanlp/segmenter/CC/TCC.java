@@ -1,6 +1,6 @@
 package cn.edu.kmust.seanlp.segmenter.CC;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
