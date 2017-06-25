@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cn.edu.kmust</groupId>
-	<artifactId>SEANLP</artifactId>
+	<artifactId>seanlp</artifactId>
 	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>SEANLP</name>
+	<name>seanlp</name>
 	<url>https://github.com/zhaoshiyu/SEANLP.git</url>
 
 	<developers>
