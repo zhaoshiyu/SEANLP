@@ -12,10 +12,10 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.zip.GZIPOutputStream;
 
+import cn.edu.kmust.io.IOUtil;
 import cn.edu.kmust.seanlp.Config.FileExtensions;
 import cn.edu.kmust.seanlp.Config.Log;
 import cn.edu.kmust.seanlp.collection.trie.DATrie;
-import cn.edu.kmust.seanlp.io.IOUtil;
 import cn.edu.kmust.seanlp.util.ByteArray;
 import cn.edu.kmust.seanlp.util.ICacheAble;
 import cn.edu.kmust.seanlp.util.StringUtil;

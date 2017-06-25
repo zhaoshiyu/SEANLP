@@ -5,10 +5,10 @@ import java.io.FileOutputStream;
 import java.util.List;
 import java.util.ListIterator;
 
+import cn.edu.kmust.io.IOUtil;
 import cn.edu.kmust.seanlp.Config;
 import cn.edu.kmust.seanlp.Config.FileExtensions;
 import cn.edu.kmust.seanlp.Config.Log;
-import cn.edu.kmust.seanlp.io.IOUtil;
 import cn.edu.kmust.seanlp.segmenter.domain.Term;
 import cn.edu.kmust.seanlp.util.ByteArray;
 import cn.edu.kmust.seanlp.util.StringUtil;

@@ -2,8 +2,8 @@ package cn.edu.kmust.seanlp.util;
 
 import java.io.InputStream;
 
+import cn.edu.kmust.io.IOUtil;
 import cn.edu.kmust.seanlp.Config.Log;
-import cn.edu.kmust.seanlp.io.IOUtil;
 import cn.edu.kmust.seanlp.util.ByteUtil;
 
 /**
