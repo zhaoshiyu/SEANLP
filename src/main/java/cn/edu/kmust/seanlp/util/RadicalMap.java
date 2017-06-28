@@ -2,6 +2,7 @@ package cn.edu.kmust.seanlp.util;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -11,11 +12,16 @@ import java.util.Set;
  */
 public class RadicalMap {
 	//Thai
-	private static HashMap<Character, Character> charsToRads = new HashMap<Character, Character>();
-	private static HashMap<Character, Set<Character>> radsToChars = new HashMap<Character, Set<Character>>();
+	private static Map<Character, Character> thaiCharsToRads = new HashMap<Character, Character>();
+	private static Map<Character, Set<Character>> thaiRadsToChars = new HashMap<Character, Set<Character>>();
+	
+	//Myanmar
+	private static Map<Character, Character> myanmarCharsToRads = new HashMap<Character, Character>();
+	private static Map<Character, Set<Character>> myanmarRadsToChars = new HashMap<Character, Set<Character>>();
 	
 	static {
-		String[] radLists = {
+		//Thai
+		String[] thaiRadLists = {
 				"eabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
 				"cกขฃคฆงจชซญฎฏฐฑฒณดตถทธนบปพฟภมยรลวศษสฬอ",
 				"nฅฉผฝฌหฮฤฦ",
@@ -27,16 +33,46 @@ public class RadicalMap {
 				"q.,?!;:`~-_=+'\"\\/()[]{}<>@#$%^&*",
 				"p "
 				 };
-		for (int i = 0; i < radLists.length; i++) {
+		for (int i = 0; i < thaiRadLists.length; i++) {
 			Set<Character> chars = new HashSet<Character>();
-			char rad = radLists[i].charAt(0);
+			char rad = thaiRadLists[i].charAt(0);
 			int j = 1;
-			for (int rLeng = radLists[i].length(); j < rLeng; j++) {
-				char ch = radLists[i].charAt(j);
-				charsToRads.put(Character.valueOf(ch), Character.valueOf(rad));
+			for (int rLeng = thaiRadLists[i].length(); j < rLeng; j++) {
+				char ch = thaiRadLists[i].charAt(j);
+				thaiCharsToRads.put(Character.valueOf(ch), Character.valueOf(rad));
 				chars.add(Character.valueOf(ch));
 			}
-			radsToChars.put(Character.valueOf(rad), chars);
+			thaiRadsToChars.put(Character.valueOf(rad), chars);
+		}
+		
+		
+		//Myanmar
+		String[] myanmarRadLists = {
+				"EabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+				"D0123456789၀၁၂၃၄၅၆၇၈၉",                            //1040-1049
+				"Cကခဂဃငစဆဇဈဉ ညဋဌဍဎဏတထဒဓနပဖဗဘမယရလဝသဟဠအ",   //1000-1021
+				"Mျြှွ",										//103B-103E
+				"Vါာိီုူေဲ",									//102B-1032
+				"A်",										//103A
+				"S◌",										//1039
+				"Fး့ံ",										//1036-1038
+				"Iဤဧဪ၌၍၏",  								//1024,1027,102A,104C,104D,104F
+				"Eဣဥဦဩ၎",									//1023,1025,1026,1029,104E
+				"Gဿ",										//103F								
+				"P၊။",										//104A-104B
+				"W "										//0020
+		};
+		
+		for (int i = 0; i < myanmarRadLists.length; i++) {
+			Set<Character> chars = new HashSet<Character>();
+			char rad = myanmarRadLists[i].charAt(0);
+			int j = 1;
+			for (int rLeng = myanmarRadLists[i].length(); j < rLeng; j++) {
+				char ch = myanmarRadLists[i].charAt(j);
+				myanmarCharsToRads.put(Character.valueOf(ch), Character.valueOf(rad));
+				chars.add(Character.valueOf(ch));
+			}
+			myanmarRadsToChars.put(Character.valueOf(rad), chars);
 		}
 	}
 	
@@ -46,7 +82,7 @@ public class RadicalMap {
 	 * @return Character字符类别
 	 */
 	public static char getThaiRadical(char ch) {
-		Character character = (Character) charsToRads.get(Character.valueOf(ch));
+		Character character = (Character) thaiCharsToRads.get(Character.valueOf(ch));
 		if (character != null) {
 			return character.charValue();
 		}
@@ -59,7 +95,7 @@ public class RadicalMap {
 	 * @return String字符串类别
 	 */
 	public static String getThaiCharType(char ch) {
-		Character character = (Character) charsToRads.get(Character.valueOf(ch));
+		Character character = (Character) thaiCharsToRads.get(Character.valueOf(ch));
 		if (character != null) {
 			return character.toString();
 		}
@@ -67,7 +103,7 @@ public class RadicalMap {
 	}
 
 	public static Set<Character> getThaiChars(char ch) {
-		return (Set<Character>) radsToChars.get(Character.valueOf(ch));
+		return (Set<Character>) thaiRadsToChars.get(Character.valueOf(ch));
 	}
 	
    public static String getThaiSyllableType(String str) {
@@ -179,19 +215,49 @@ public class RadicalMap {
 	 * @return String
 	 */
 	public static String getVietnameseType(String viWord) {
-		  String temp="";
-		  if (viWord.matches("^[0-9]+$")) {
-			  temp = "d";
-		  } else if (viWord.matches("^[A-Za-z]+$")) {
-			  temp = "e";
-			  } else if (viWord.matches("^[À-ỹ]+$")) {
-				  temp = "t";
-				  } else if (viWord.matches("[\\pP]+")) {
-					  temp = "p";
-					  } else {
-						  temp = "v";
-						  }
-		  return temp;
-	  	}
+		String temp = "";
+		if (viWord.matches("^[0-9]+$")) {
+			temp = "d";
+		} else if (viWord.matches("^[A-Za-z]+$")) {
+			temp = "e";
+		} else if (viWord.matches("^[À-ỹ]+$")) {
+			temp = "t";
+		} else if (viWord.matches("[\\pP]+")) {
+			temp = "p";
+		} else {
+			temp = "v";
+		}
+		return temp;
+	}
+	
+	/**
+	 * 当前缅甸语字母的类别<br>
+	 * @param ch 缅甸语
+	 * @return Character字符类别
+	 */
+	public static char getMyanmarRadical(char ch) {
+		Character character = (Character) myanmarCharsToRads.get(Character.valueOf(ch));
+		if (character != null) {
+			return character.charValue();
+		}
+		return 'o';
+	}
+
+	/**
+	 * 当前缅甸语字符的类别<br>
+	 * @param ch 缅甸语字符
+	 * @return String字符串类别
+	 */
+	public static String getMyanmarCharType(char ch) {
+		Character character = (Character) myanmarCharsToRads.get(Character.valueOf(ch));
+		if (character != null) {
+			return character.toString();
+		}
+		return "o";
+	}
+
+	public static Set<Character> getMyanmarChars(char ch) {
+		return (Set<Character>) myanmarRadsToChars.get(Character.valueOf(ch));
+	}
 	
 }
