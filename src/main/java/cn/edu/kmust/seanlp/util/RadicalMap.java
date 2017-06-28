@@ -16,8 +16,8 @@ public class RadicalMap {
 	private static Map<Character, Set<Character>> thaiRadsToChars = new HashMap<Character, Set<Character>>();
 	
 	//Myanmar
-	private static Map<Character, Character> myanmarCharsToRads = new HashMap<Character, Character>();
-	private static Map<Character, Set<Character>> myanmarRadsToChars = new HashMap<Character, Set<Character>>();
+	private static Map<Character, Character> burmeseCharsToRads = new HashMap<Character, Character>();
+	private static Map<Character, Set<Character>> burmeseRadsToChars = new HashMap<Character, Set<Character>>();
 	
 	static {
 		//Thai
@@ -47,7 +47,7 @@ public class RadicalMap {
 		
 		
 		//Myanmar
-		String[] myanmarRadLists = {
+		String[] burmeseRadLists = {
 				"EabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
 				"D0123456789၀၁၂၃၄၅၆၇၈၉",                            //1040-1049
 				"Cကခဂဃငစဆဇဈဉ ညဋဌဍဎဏတထဒဓနပဖဗဘမယရလဝသဟဠအ",   //1000-1021
@@ -63,16 +63,16 @@ public class RadicalMap {
 				"W "										//0020
 		};
 		
-		for (int i = 0; i < myanmarRadLists.length; i++) {
+		for (int i = 0; i < burmeseRadLists.length; i++) {
 			Set<Character> chars = new HashSet<Character>();
-			char rad = myanmarRadLists[i].charAt(0);
+			char rad = burmeseRadLists[i].charAt(0);
 			int j = 1;
-			for (int rLeng = myanmarRadLists[i].length(); j < rLeng; j++) {
-				char ch = myanmarRadLists[i].charAt(j);
-				myanmarCharsToRads.put(Character.valueOf(ch), Character.valueOf(rad));
+			for (int rLeng = burmeseRadLists[i].length(); j < rLeng; j++) {
+				char ch = burmeseRadLists[i].charAt(j);
+				burmeseCharsToRads.put(Character.valueOf(ch), Character.valueOf(rad));
 				chars.add(Character.valueOf(ch));
 			}
-			myanmarRadsToChars.put(Character.valueOf(rad), chars);
+			burmeseRadsToChars.put(Character.valueOf(rad), chars);
 		}
 	}
 	
@@ -236,7 +236,7 @@ public class RadicalMap {
 	 * @return Character字符类别
 	 */
 	public static char getMyanmarRadical(char ch) {
-		Character character = (Character) myanmarCharsToRads.get(Character.valueOf(ch));
+		Character character = (Character) burmeseCharsToRads.get(Character.valueOf(ch));
 		if (character != null) {
 			return character.charValue();
 		}
@@ -249,7 +249,7 @@ public class RadicalMap {
 	 * @return String字符串类别
 	 */
 	public static String getMyanmarCharType(char ch) {
-		Character character = (Character) myanmarCharsToRads.get(Character.valueOf(ch));
+		Character character = (Character) burmeseCharsToRads.get(Character.valueOf(ch));
 		if (character != null) {
 			return character.toString();
 		}
@@ -257,7 +257,7 @@ public class RadicalMap {
 	}
 
 	public static Set<Character> getMyanmarChars(char ch) {
-		return (Set<Character>) myanmarRadsToChars.get(Character.valueOf(ch));
+		return (Set<Character>) burmeseRadsToChars.get(Character.valueOf(ch));
 	}
 	
 }
