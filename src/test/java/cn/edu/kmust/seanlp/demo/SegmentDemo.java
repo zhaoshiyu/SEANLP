@@ -48,7 +48,9 @@ public class SegmentDemo {
 		System.out.println(SEANLP.Lao.reMinSegment(loText));
 		
 		//缅甸语分词
-		String buText = "ကံဆိုးကံဇာတာကံထိုက်ကံနခိုကံနှိုးဆော်";
+		//String buText = "ကံဆိုးကံဇာတာကံထိုက်ကံနခိုကံနှိုးဆော်";
+		//ဝတ္ထုတို/n တစ်/tn ပုဒ်/part ဘယ်လို/adv ရ/v လာ/part တယ်/ppm ဆို/v တာ/part မျိုး/n လေ/part ။/punc
+		String buText = "ဝတ္ထုတိုတစ်ပုဒ်ဘယ်လိုရလာတယ်ဆိုတာမျိုးလေ။";
 		System.out.println(SEANLP.Burmese.datSegment(buText));
 		System.out.println(SEANLP.Burmese.maxSegment(buText));
 		System.out.println(SEANLP.Burmese.minSegment(buText));
