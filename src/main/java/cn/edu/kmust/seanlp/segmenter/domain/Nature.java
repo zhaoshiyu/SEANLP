@@ -51,6 +51,7 @@ public enum Nature {
 	PNTR,
 	PPRS,
 	PREL,
+	// Thai and Burmese
 	PUNC,
 	RPRE,
 	VACT,
@@ -70,8 +71,10 @@ public enum Nature {
 	/**
 	 * Lao
 	 */
+	// Lao and Burmese
 	ADJ,
 	ADP,
+	// Lao and Burmese
 	ADV,
 	CLF,
 	CLT,
@@ -89,10 +92,9 @@ public enum Nature {
 	LBL,
 	MTR,
 	/**
-	 * 老挝语和越南语和柬埔寨语
+	 * 老挝语和越南语和柬埔寨语 Burmese
 	 */
 	N,
-	//NEG, 
 	NTR,
 	ONM,
 	PAM,
@@ -105,7 +107,7 @@ public enum Nature {
 	SCO,
 	TTL,
 	/**
-	 * 老挝语和越南语和柬埔寨语
+	 * 老挝语和越南语和柬埔寨语 Burmese
 	 */
 	V,
 	
@@ -159,6 +161,7 @@ public enum Nature {
 	AUX,
 	AW,
 	DAD,
+	// Khmer and Burmese
 	FW,
 	IN,
 	JJ,
@@ -176,6 +179,27 @@ public enum Nature {
 	UH,
 	VV,
 	W,
+	
+	/**
+	 * Burmese
+	 */
+	ABB,
+	//ADJ,
+	//ADV,
+	AV,
+	CONJ,
+	//FW,	
+	INT,
+	//N,
+	NUM,
+	PART,
+	PPM,
+	PRON,
+	//PUNC,
+	SB,
+	TN,
+	//V,
+	
 	
 	
 	//n.名词 v.动词 pron.代词 adj.形容词 adv.副词 num.数词 art.冠词prep.介词 conj.连词 int.感叹词
