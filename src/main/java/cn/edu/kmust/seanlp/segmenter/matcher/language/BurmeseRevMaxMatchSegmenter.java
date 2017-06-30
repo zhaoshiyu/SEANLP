@@ -3,6 +3,8 @@ package cn.edu.kmust.seanlp.segmenter.matcher.language;
 import java.util.List;
 
 import cn.edu.kmust.seanlp.Config;
+import cn.edu.kmust.seanlp.POS.BurmesePOS;
+import cn.edu.kmust.seanlp.POS.POS;
 import cn.edu.kmust.seanlp.dictionary.language.BurmeseCommonDictionary;
 import cn.edu.kmust.seanlp.segmenter.AbstractBurmeseSegmenter;
 import cn.edu.kmust.seanlp.segmenter.domain.Term;
@@ -17,14 +19,17 @@ import cn.edu.kmust.seanlp.segmenter.matcher.ReverseMaximumMatcher;
 public class BurmeseRevMaxMatchSegmenter  extends AbstractBurmeseSegmenter {
 	
 	private Matcher revMaxMatcher = new ReverseMaximumMatcher(BurmeseCommonDictionary.burmeseDictionary.dictionaryTrie);
+	private final POS pos = new BurmesePOS();
 	
 	@Override
 	protected List<Term> segmentSentence(char[] sentence) {
+		if (Config.BaseConf.speechTagging) return pos.speechTagging(revMaxMatcher.segment(sentence));
 		return revMaxMatcher.segment(sentence);
 	}
 	
 	@Override
 	public List<Term> segmentSentence(String sentence) {
+		if (Config.BaseConf.speechTagging) return pos.speechTagging(revMaxMatcher.segment(sentence));
 		return revMaxMatcher.segment(sentence);
 	}
 	
