@@ -33,8 +33,7 @@ public class LaoDoubleArrayTrieSegmenter extends AbstractLaoSegmenter {
 		char[] charArray = sentence;
 		final int[] wordNet = new int[charArray.length];
 		Arrays.fill(wordNet, 1);
-		final Nature[] natureArray = Config.BaseConf.speechTagging ? new Nature[charArray.length]
-				: null;
+		final Nature[] natureArray = Config.BaseConf.speechTagging ? new Nature[charArray.length] : null;
 		DATrie<CoreDictionary.Attribute>.Searcher searcher = LaoCoreDictionary.laoDictionary.dictionaryTrie.getSearcher(sentence, 0);
 		while (searcher.next()) {
 			int length = searcher.length;
