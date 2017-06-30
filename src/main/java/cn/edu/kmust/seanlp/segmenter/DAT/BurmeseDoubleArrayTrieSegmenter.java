@@ -6,8 +6,12 @@ import java.util.List;
 
 import cn.edu.kmust.seanlp.Config;
 import cn.edu.kmust.seanlp.collection.trie.DATrie;
+import cn.edu.kmust.seanlp.dictionary.CoreDictionary;
 import cn.edu.kmust.seanlp.dictionary.language.BurmeseCommonDictionary;
+import cn.edu.kmust.seanlp.dictionary.language.BurmeseCoreDictionary;
+import cn.edu.kmust.seanlp.dictionary.language.KhmerCoreDictionary;
 import cn.edu.kmust.seanlp.segmenter.AbstractBurmeseSegmenter;
+import cn.edu.kmust.seanlp.segmenter.domain.Nature;
 import cn.edu.kmust.seanlp.segmenter.domain.Term;
 
 /**
@@ -30,27 +34,64 @@ public class BurmeseDoubleArrayTrieSegmenter extends AbstractBurmeseSegmenter {
 	protected List<Term> segmentSentence(char[] sentence) {
 		final int[] wordNet = new int[sentence.length];
 		Arrays.fill(wordNet, 1);
-//		final Nature[] natureArray = Config.BaseConf.speechTagging ? new Nature[charArray.length]	: null;
-		DATrie<String>.Searcher searcher = BurmeseCommonDictionary.burmeseDictionary.dictionaryTrie.getSearcher(sentence, 0);
+		final Nature[] natureArray = Config.BaseConf.speechTagging ? new Nature[sentence.length]	: null;
+//		DATrie<String>.Searcher searcher = KhmerCoreDictionary.khmerDictionary.dictionaryTrie.getSearcher(sentence, 0);
+		DATrie<CoreDictionary.Attribute>.Searcher searcher = BurmeseCoreDictionary.BurmeseDictionary.dictionaryTrie.getSearcher(sentence, 0);
 		while (searcher.next()) {
 			int length = searcher.length;
 			if (length > wordNet[searcher.begin]) {
 				wordNet[searcher.begin] = length;
-//				if (Config.BaseConf.speechTagging) {
-//					natureArray[searcher.begin] = searcher.value.nature[0];
-//				}
+				if (Config.BaseConf.speechTagging) {
+					natureArray[searcher.begin] = searcher.value.nature[0];
+				}
+			}
+		}
+		
+		if (Config.BaseConf.speechTagging) {
+			for (int i = 0; i < natureArray.length;) {
+				if (natureArray[i] == null) {
+					int j = i + 1;
+					for (; j < natureArray.length; ++j) {
+						if (natureArray[j] != null)
+							break;
+					}
+					
+					List<Term> nodeList = quickSegment(sentence,i, j);
+					for (Term node : nodeList) {
+						if (node.getWord().length() >= wordNet[i]) {
+							wordNet[i] = node.getWord().length();
+							natureArray[i] = node.getNature();
+							i += wordNet[i];
+						}
+					}
+					i = j;
+				} else {
+					++i;
+				}
 			}
 		}
 		
 		LinkedList<Term> termList = new LinkedList<Term>();
 		for (int i = 0; i < wordNet.length;) {
-//			Term term = new Term(new String(charArray, i, wordNet[i]), Config.BaseConf.speechTagging ? (natureArray[i] == null ? Nature.WXXX	: natureArray[i]) : null);
-			Term term = new Term(new String(sentence, i, wordNet[i]), null);
+			Term term = new Term(new String(sentence, i, wordNet[i]), Config.BaseConf.speechTagging ? (natureArray[i] == null ? Nature.W	: natureArray[i]) : null);
 			term.setOffset(i);
 			termList.add(term);
 			i += wordNet[i];
 		}
 		return termList;
+	}
+	
+	protected static List<Term> quickSegment(char[] charArray, int start, int end) {
+		List<Term> nodeList = new LinkedList<Term>();
+		int offsetAtom = start;
+		while (++offsetAtom < end) {
+			nodeList.add(new Term(new String(charArray, start, offsetAtom - start), null));
+			start = offsetAtom;
+		}
+		if (offsetAtom == end)
+			nodeList.add(new Term(new String(charArray, start, offsetAtom - start), null));
+
+		return nodeList;
 	}
 
 }
