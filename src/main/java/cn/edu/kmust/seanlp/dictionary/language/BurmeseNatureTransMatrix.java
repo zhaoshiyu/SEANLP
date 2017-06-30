@@ -25,5 +25,6 @@ public static NatureTransitionMatrix<Nature> burmeseTransMatrix;
 			Log.logger.info("加载核心词典词性转移矩阵" + Config.DictConf.dictionaryPath + Config.language.toString() + Config.DictConf.natureTransitionMatrix + "成功，耗时：" + (System.currentTimeMillis() - start) + " ms");
 		}
 	}
+	
 
 }
