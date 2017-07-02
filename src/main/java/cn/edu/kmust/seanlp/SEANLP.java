@@ -14,6 +14,7 @@ import cn.edu.kmust.seanlp.similarity.language.KhmerSentenceSimilarity;
 import cn.edu.kmust.seanlp.similarity.language.LaoSentenceSimilarity;
 import cn.edu.kmust.seanlp.similarity.language.ThaiSentenceSimilarity;
 import cn.edu.kmust.seanlp.similarity.language.VietnameseSentenceSimilarity;
+import cn.edu.kmust.seanlp.tokenizer.BurmeseCRFTokenizer;
 import cn.edu.kmust.seanlp.tokenizer.BurmeseDATTokenizer;
 import cn.edu.kmust.seanlp.tokenizer.BurmeseMatchTokenizer;
 import cn.edu.kmust.seanlp.tokenizer.BurmeseSyllableDATTokenizer;
@@ -389,6 +390,15 @@ public class SEANLP {
 		 */
 		public static List<Term> datSegment(String text) {
 			return BurmeseDATTokenizer.segment(text);
+		}
+		
+		/**
+		 * 缅甸语CRF分词
+		 * @param text
+		 * @return
+		 */
+		public static List<Term> crfSegment(String text) {
+			return BurmeseCRFTokenizer.segment(text);
 		}
 		
 		/**

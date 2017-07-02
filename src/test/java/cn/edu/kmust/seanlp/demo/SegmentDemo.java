@@ -14,7 +14,7 @@ public class SegmentDemo {
 		String thText = "ความสัมพันธ์ในทางเศรษฐกิจกับระบบความสัมพันธ์ทางกฎหมาย";
 		System.out.println(SEANLP.Thai.syllableSegment(thText));
 		System.out.println(SEANLP.Thai.dCRFSegment(thText));
-		//System.out.println(SEANLP.Thai.gCRFSegment(thText));
+		System.out.println(SEANLP.Thai.gCRFSegment(thText));
 		System.out.println(SEANLP.Thai.datSegment(thText));
 		System.out.println(SEANLP.Thai.maxSegment(thText));
 		System.out.println(SEANLP.Thai.minSegment(thText));
@@ -52,6 +52,7 @@ public class SegmentDemo {
 		//ဝတ္ထုတို/n တစ်/tn ပုဒ်/part ဘယ်လို/adv ရ/v လာ/part တယ်/ppm ဆို/v တာ/part မျိုး/n လေ/part ။/punc
 		String buText = "ဝတ္ထုတိုတစ်ပုဒ်ဘယ်လိုရလာတယ်ဆိုတာမျိုးလေ။";
 		System.out.println(SEANLP.Burmese.datSegment(buText));
+		System.out.println(SEANLP.Burmese.crfSegment(buText));
 		System.out.println(SEANLP.Burmese.maxSegment(buText));
 		System.out.println(SEANLP.Burmese.minSegment(buText));
 		System.out.println(SEANLP.Burmese.reMaxSegment(buText));
