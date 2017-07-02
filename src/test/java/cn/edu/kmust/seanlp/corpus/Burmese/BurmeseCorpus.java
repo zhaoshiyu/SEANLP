@@ -200,18 +200,18 @@ public class BurmeseCorpus {
 				if (len == 0) {
 					continue;
 				} else if (len == 1) {
-					rets.add(word.charAt(0) + "\t" + RadicalMap.getMyanmarCharType(word.charAt(0)) + "\t" + "S");
+					rets.add(word.charAt(0) + "\t" + RadicalMap.getBurmeseCharType(word.charAt(0)) + "\t" + "S");
 				} else if (len == 2) {
-					rets.add(word.charAt(0) + "\t" + RadicalMap.getMyanmarCharType(word.charAt(0)) + "\t" + "B");
-					rets.add(word.charAt(1) + "\t" + RadicalMap.getMyanmarCharType(word.charAt(1)) + "\t" + "E");
+					rets.add(word.charAt(0) + "\t" + RadicalMap.getBurmeseCharType(word.charAt(0)) + "\t" + "B");
+					rets.add(word.charAt(1) + "\t" + RadicalMap.getBurmeseCharType(word.charAt(1)) + "\t" + "E");
 				} else {
 					for (int i = 0; i < len; i++) {
 						if (i == 0) {
-							rets.add(word.charAt(i) + "\t" + RadicalMap.getMyanmarCharType(word.charAt(i)) + "\t" + "B");
+							rets.add(word.charAt(i) + "\t" + RadicalMap.getBurmeseCharType(word.charAt(i)) + "\t" + "B");
 						} else if (i == (len - 1)) {
-							rets.add(word.charAt(i) + "\t" + RadicalMap.getMyanmarCharType(word.charAt(i)) + "\t" + "E");
+							rets.add(word.charAt(i) + "\t" + RadicalMap.getBurmeseCharType(word.charAt(i)) + "\t" + "E");
 						} else {
-							rets.add(word.charAt(i) + "\t" + RadicalMap.getMyanmarCharType(word.charAt(i)) + "\t" + "M");
+							rets.add(word.charAt(i) + "\t" + RadicalMap.getBurmeseCharType(word.charAt(i)) + "\t" + "M");
 						}
 					}
 				}
