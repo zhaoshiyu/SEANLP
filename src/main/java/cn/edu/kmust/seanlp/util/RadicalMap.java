@@ -235,7 +235,7 @@ public class RadicalMap {
 	 * @param ch 缅甸语
 	 * @return Character字符类别
 	 */
-	public static char getMyanmarRadical(char ch) {
+	public static char getBurmeseRadical(char ch) {
 		Character character = (Character) burmeseCharsToRads.get(Character.valueOf(ch));
 		if (character != null) {
 			return character.charValue();
@@ -248,7 +248,7 @@ public class RadicalMap {
 	 * @param ch 缅甸语字符
 	 * @return String字符串类别
 	 */
-	public static String getMyanmarCharType(char ch) {
+	public static String getBurmeseCharType(char ch) {
 		Character character = (Character) burmeseCharsToRads.get(Character.valueOf(ch));
 		if (character != null) {
 			return character.toString();
@@ -256,7 +256,7 @@ public class RadicalMap {
 		return "o";
 	}
 
-	public static Set<Character> getMyanmarChars(char ch) {
+	public static Set<Character> getBurmeseChars(char ch) {
 		return (Set<Character>) burmeseRadsToChars.get(Character.valueOf(ch));
 	}
 	
