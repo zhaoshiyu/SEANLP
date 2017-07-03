@@ -14,7 +14,7 @@ public class SegmentDemo {
 		String thText = "ความสัมพันธ์ในทางเศรษฐกิจกับระบบความสัมพันธ์ทางกฎหมาย";
 		System.out.println(SEANLP.Thai.syllableSegment(thText));
 		System.out.println(SEANLP.Thai.dCRFSegment(thText));
-		System.out.println(SEANLP.Thai.gCRFSegment(thText));
+		//System.out.println(SEANLP.Thai.gCRFSegment(thText));
 		System.out.println(SEANLP.Thai.datSegment(thText));
 		System.out.println(SEANLP.Thai.maxSegment(thText));
 		System.out.println(SEANLP.Thai.minSegment(thText));
