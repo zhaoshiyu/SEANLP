@@ -82,7 +82,7 @@ public class SEANLP {
 		 * @return
 		 */
 		public static List<Term> gCRFSegment(String text) {
-			return ThaiCRFTokenizer.segment(text);
+			return ThaiCRFTokenizer.gCRFSegment(text);
 		}
 		
 		/**
