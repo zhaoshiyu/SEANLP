@@ -4,6 +4,7 @@ import cn.edu.kmust.seanlp.Config;
 import cn.edu.kmust.seanlp.CRF.CRFModel;
 import cn.edu.kmust.seanlp.Config.Log;
 import cn.edu.kmust.seanlp.Config.ModelConf;
+import cn.edu.kmust.seanlp.Config.NGram;
 
 /**
  * 高棉语CRF静态模型
@@ -13,7 +14,7 @@ import cn.edu.kmust.seanlp.Config.ModelConf;
  */
 public class StaticKhmerCRFModel {
 	
-	private static String kmCRFModelFile = Config.ModelConf.CRFModelPath + Config.language.toString() + ModelConf.khWordSegment;
+	private static String kmCRFModelFile = Config.ModelConf.CRFModelPath + Config.language.toString() + ModelConf.wordSegment + NGram.fivegram;
 	
 	public static CRFModel crfKhmerSegmentModel;
 	

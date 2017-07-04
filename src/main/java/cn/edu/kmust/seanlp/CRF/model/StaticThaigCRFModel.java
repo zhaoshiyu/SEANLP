@@ -4,6 +4,7 @@ import cn.edu.kmust.seanlp.Config;
 import cn.edu.kmust.seanlp.CRF.CRFModel;
 import cn.edu.kmust.seanlp.Config.Log;
 import cn.edu.kmust.seanlp.Config.ModelConf;
+import cn.edu.kmust.seanlp.Config.NGram;
 
 /**
  * 泰语静态CRF分词模型
@@ -12,7 +13,7 @@ import cn.edu.kmust.seanlp.Config.ModelConf;
  */
 public class StaticThaigCRFModel {
 	
-	private static String thCRFWordSegmentModelFile = Config.ModelConf.CRFModelPath + Config.language.toString() + ModelConf.wordSegment;
+	private static String thCRFWordSegmentModelFile = Config.ModelConf.CRFModelPath + Config.language.toString() + ModelConf.wordSegment + NGram.sevengram;
 	
 	public static CRFModel crfThaiWordSegmentModel;
 	

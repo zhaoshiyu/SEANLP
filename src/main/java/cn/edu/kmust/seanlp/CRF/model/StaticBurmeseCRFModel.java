@@ -4,6 +4,7 @@ import cn.edu.kmust.seanlp.Config;
 import cn.edu.kmust.seanlp.CRF.CRFModel;
 import cn.edu.kmust.seanlp.Config.Log;
 import cn.edu.kmust.seanlp.Config.ModelConf;
+import cn.edu.kmust.seanlp.Config.NGram;
 
 /**
  * 缅甸语CRF静态模型
@@ -13,7 +14,7 @@ import cn.edu.kmust.seanlp.Config.ModelConf;
  */
 public class StaticBurmeseCRFModel {
 	
-	private static String buCRFModelFile = Config.ModelConf.CRFModelPath + Config.language.toString() + ModelConf.wordSegment;
+	private static String buCRFModelFile = Config.ModelConf.CRFModelPath + Config.language.toString() + ModelConf.wordSegment + NGram.sevengram;
 	
 	public static CRFModel crfBurmeseSegmentModel;
 	

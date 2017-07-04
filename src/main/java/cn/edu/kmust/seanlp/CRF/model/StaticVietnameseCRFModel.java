@@ -4,6 +4,7 @@ import cn.edu.kmust.seanlp.Config;
 import cn.edu.kmust.seanlp.CRF.CRFModel;
 import cn.edu.kmust.seanlp.Config.Log;
 import cn.edu.kmust.seanlp.Config.ModelConf;
+import cn.edu.kmust.seanlp.Config.NGram;
 
 /**
  * 越南语静态CRF分词模型
@@ -12,7 +13,7 @@ import cn.edu.kmust.seanlp.Config.ModelConf;
  */
 public class StaticVietnameseCRFModel {
 	
-	private final static String viCRFModelFile = Config.ModelConf.CRFModelPath + Config.language.toString() + ModelConf.viWordSegment;
+	private final static String viCRFModelFile = Config.ModelConf.CRFModelPath + Config.language.toString() + ModelConf.wordSegment + NGram.trigram;
 	
 	public static CRFModel crfVietnameseSegmentModel;
 	
