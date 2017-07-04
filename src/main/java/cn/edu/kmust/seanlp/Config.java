@@ -79,9 +79,17 @@ public class Config {
 		 * CRF模型路径
 		 */
 		public static String CRFModelPath = "/cn/edu/kmust/seanlp/model/segmenter/";
-
+		/**
+		 * syllable segmentation
+		 */
 		public static String syllableSegment = "/syllable.segment.dCRF.";
+		/**
+		 * syllable merge
+		 */
 		public static String syllableMerge = "/syllable.merge.dCRF.";
+		/**
+		 * word segmentation
+		 */
 		public static String wordSegment = "/word.segment.CRF.";
 
 		public static String POS = "POS.";
