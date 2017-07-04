@@ -2,6 +2,7 @@ package cn.edu.kmust.seanlp.segmenter.crf;
 
 import java.util.List;
 
+import cn.edu.kmust.seanlp.Config;
 import cn.edu.kmust.seanlp.segmenter.ThaiSegmenter;
 import cn.edu.kmust.seanlp.segmenter.CRF.ThaiCRFSegmenter;
 import cn.edu.kmust.seanlp.segmenter.domain.Term;

@@ -3,10 +3,11 @@ package cn.edu.kmust.seanlp.segmenter.crf;
 import cn.edu.kmust.seanlp.Config;
 import cn.edu.kmust.seanlp.segmenter.ThaiSegmenter;
 import cn.edu.kmust.seanlp.segmenter.CRF.ThaiCRFSegmenter;
+import junit.framework.TestCase;
 
-public class SyllableSegmentTest {
+public class SyllableSegmentTest extends TestCase {
 	
-	public static void main(String[] args) {
+	public void testSyllableSegment() {
 		Config.BaseConf.enableDebug();
 		ThaiSegmenter segmentThai = new ThaiCRFSegmenter();
 		String textThai = "ความสัมพันธ์ในทางเศรษฐกิจกับระบบความสัมพันธ์ทางกฎหมาย";
