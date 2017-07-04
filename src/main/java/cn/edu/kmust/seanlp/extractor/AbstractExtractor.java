@@ -2,7 +2,9 @@ package cn.edu.kmust.seanlp.extractor;
 
 import cn.edu.kmust.seanlp.Config;
 import cn.edu.kmust.seanlp.segmenter.Segmenter;
+import cn.edu.kmust.seanlp.tokenizer.BurmeseCRFTokenizer;
 import cn.edu.kmust.seanlp.tokenizer.BurmeseDATTokenizer;
+import cn.edu.kmust.seanlp.tokenizer.KhmerCRFTokenizer;
 import cn.edu.kmust.seanlp.tokenizer.KhmerDATTokenizer;
 import cn.edu.kmust.seanlp.tokenizer.LaoDATTokenizer;
 import cn.edu.kmust.seanlp.tokenizer.ThaiCRFTokenizer;
@@ -39,15 +41,15 @@ public abstract class AbstractExtractor {
 			break;
 			
 		case Khmer :
-			defaultSegment = KhmerDATTokenizer.datKhmerSegment;
+			defaultSegment = KhmerCRFTokenizer.crfKhmerSegment;
 			break;
 			
 		case Burmese :
-			defaultSegment = BurmeseDATTokenizer.datBurmeseSegment;
+			defaultSegment = BurmeseCRFTokenizer.crfBurmeseSegment;
 			break;
 			
 		case Myanmar :
-			defaultSegment = BurmeseDATTokenizer.datBurmeseSegment;
+			defaultSegment = BurmeseCRFTokenizer.crfBurmeseSegment;
 			break;
 			
 		default:
