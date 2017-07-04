@@ -181,7 +181,7 @@ public class Config {
 	}
 
 	/**
-	 * 日志组件
+	 * logger
 	 */
 	public static final class Log {
 		public static Logger logger = Logger.getLogger("SEANLP");
