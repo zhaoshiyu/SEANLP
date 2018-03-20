@@ -61,6 +61,7 @@ SEANLP: Southeast Asia Natural Language Processing
 
 * 缅甸语：
   * 音节切分
+  * 条件随机场分词
   * 词典极速分词
   * 词典正向最长匹配分词
   * 词典逆向最长匹配分词
