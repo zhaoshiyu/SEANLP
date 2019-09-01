@@ -105,10 +105,10 @@ git clone https://github.com/ZhaoShiyu/SEANLP.git
 cd SEANLP
 mvn clean package -Dmaven.test.skip=true
 ```
-注意：此处下载的源码中不包含泰语单层条件随机场分词模型，完整模型可下载[SEANLP-Java-1.0.0-Models.jar](http://pan.baidu.com/s/1jGY0MIa)
+注意：此处下载的源码中不包含泰语单层条件随机场分词模型，需要完整模型请用方法二。
 
 ### 方法二、下载jar
-下载[SEANLP-1.0.0.jar](http://pan.baidu.com/s/1hrkaizi) 或者同时下载[SEANLP-Java-1.0.0.jar和SEANLP-Java-1.0.0-Models.jar](http://pan.baidu.com/s/1jGY0MIa)
+下载[SEANLP-1.1.0.jar](https://pan.baidu.com/s/1nRqQrjCYpLHop4OQVF8oDQ), 或者使用[seanlp-1.1.0-sources.jar](https://pan.baidu.com/s/16QftU43YOK_sWvU0WKJhAw)中的模型。
 
 ## 调用
 **SEANLP**所有的功能都可以通过工具类`SEANLP`进行调用。调用格式为`SEANLP.语言.功能`。
