@@ -33,7 +33,7 @@
 		<maven-jar-plugin.version>2.6</maven-jar-plugin.version>
 		<maven-resources-plugin.version>2.7</maven-resources-plugin.version>
 		<maven-source-plugin.version>3.0.0</maven-source-plugin.version>
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 	</properties>
 
 	<dependencies>
